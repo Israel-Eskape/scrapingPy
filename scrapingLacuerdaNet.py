@@ -2,19 +2,21 @@ from bs4 import BeautifulSoup
 import requests
 import pandas as pd 
 
-#prueba1  url = 'https://resultados.as.com/resultados/futbol/primera/'
-url = 'https://acordes.lacuerda.net/en_espiritu_y_en_verdad/rey_humilde-2.shtml'
+print("Nombre de la banda : ")
+band = input()
+print("Nombre de la canción : ")
+song = input()
+
+band = band.replace(' ','_')
+song = song.replace(' ','_')
+
+url = 'https://acordes.lacuerda.net/'+band+'/'+song+'.shtml'
 page = requests.get(url)
 soup = BeautifulSoup(page.content, 'html.parser')
 
-#letra
-#prueba1 le = soup.find_all('span', class_= 'nombre-equipo')
 le = soup.find_all('div', id= 't_body')
 
-#print (le)
-
 letra = list()
-
 for i in le:
     letra.append(i.text)
     
