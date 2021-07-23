@@ -5,7 +5,7 @@ y las muestra en pantalla. Después de visualizarlo también da la opción si
 desea guardarlo en un documento .docx
 
 # Requisitos
-BeautifulSoup
-requests
-pandas
-Document
+- BeautifulSoup
+- requests
+- pandas
+- Document
